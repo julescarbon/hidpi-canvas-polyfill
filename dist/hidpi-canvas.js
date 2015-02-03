@@ -133,10 +133,13 @@
 ;(function(prototype) {
 	prototype.getContext = (function(_super) {
 		return function(type) {
-			var backingStore, ratio,
-				context = _super.call(this, type);
+			var backingStore, ratio, context;
 
-			if (type === '2d') {
+			if (type == '2d-lodpi') {
+				context = _super.call(this, '2d');
+			}
+			else if (type === '2d') {
+				context = _super.call(this, '2d');
 
 				backingStore = context.backingStorePixelRatio ||
 							context.webkitBackingStorePixelRatio ||
@@ -153,6 +156,9 @@
 					this.width *= ratio;
 					this.height *= ratio;
 				}
+			}
+			else {
+				context = _super.call(this, type);
 			}
 
 			return context;
