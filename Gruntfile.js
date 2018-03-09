@@ -75,8 +75,8 @@ module.exports = function (grunt) {
 
 		qunit: {
 			files: [
-				'test/CanvasRenderingContext2D.html',
-				'test/HTMLCanvasElement.html'
+//				'test/CanvasRenderingContext2D.html',
+//				'test/HTMLCanvasElement.html'
 			]
 		},
 

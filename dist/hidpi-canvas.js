@@ -137,6 +137,7 @@
 		return function(type) {
 			var backingStore, ratio, context;
 
+
 			if (type == '2d-lodpi') {
 				context = _super.call(this, '2d');
 			}
@@ -160,9 +161,9 @@
 				}
 			}
 			else {
-				context = _super.call(this, type);
+			  context = _super.call(this, type);
 			}
-
+			
 			return context;
 		};
 	})(prototype.getContext);
